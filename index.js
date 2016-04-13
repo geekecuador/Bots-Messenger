@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
+var request = require('request');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -28,7 +29,7 @@ app.get('/webhook/', function (req, res) {
         res.send('Error, wrong validation token');
     }
 
-})
+});
 
 app.post('/webhook/', function (req, res) {
     messaging_events = req.body.entry[0].messaging;
