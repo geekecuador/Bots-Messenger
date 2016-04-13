@@ -16,8 +16,13 @@ app.listen(app.get('port'), function() {
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === '123') {
         res.send(req.query['hub.challenge']);
+        console.log("Hola David");
     }
-    res.send('Error, wrong validation token');
+    else
+    {
+        res.send('Error, wrong validation token');
+    }
+
 })
 
 app.post('/webhook/', function (req, res) {
