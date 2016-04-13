@@ -26,7 +26,6 @@ app.get('/webhook/', function (req, res) {
 })
 
 app.post('/webhook/', function (req, res) {
-    console.log("CHAT FACEBOOK");
     messaging_events = req.body.entry[0].messaging;
     for (i = 0; i < messaging_events.length; i++) {
         event = req.body.entry[0].messaging[i];
@@ -34,13 +33,12 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             text = event.message.text;
             // Handle a text message from this sender
-            console.log(text);
         }
     }
     res.sendStatus(200);
 });
 
-var token= "EAAXZC58eYFoYBANHLrt5Cd51dLZClNuyZBjOT8IVTfM8TgFqQJUpZCTCIv5vRvjnvkVK6U1uuQcuApI7ybDCO3B4TAnJsQx8lJ0ZBSndpMw7Bmm1LbKfHlHhH7ysNcJFCGzunLcjOYkNtZAsychEDBoE6vqIxypXMWWMxifjDalgZDZD";
+var token= "EAAYJSOuBgdYBABeMV0iIwKJwUXcR3eWY9Pzzaw2ME6xYBPVNnZAR1aZAvFPZAyDwS3DtDAPMyxbYIJ5Sru6pWZBSQwIS8QwG9vWZB0ZCYIBQehqGbADzBIVLEM0YCbICN8zj6ZAE8CjL7bWIdyxX2UllVrRvvu18HXrZB9zej4OYBwZDZD";
 function sendTextMessage(sender, text) {
     messageData = {
         text:text
