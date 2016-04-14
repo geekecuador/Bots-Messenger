@@ -42,7 +42,7 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender);
                 continue;
             }
-            sendTextMessage(sender, "La tienes pequena: "+ text.substring(0, 200));
+            sendTextMessage(sender, "Tu mensaje fue: "+ text.substring(0, 200));
         }
     }
     res.sendStatus(200);
@@ -77,25 +77,25 @@ function sendGenericMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "title": "Atractivo 1",
+                    "subtitle": "Volcan Cotopaxi",
+                    "image_url": "http://www.gestionderiesgos.gob.ec/wp-content/uploads/2015/06/Volcán-Cotopaxi.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "https://www.messenger.com/",
-                        "title": "Web url"
+                        "title": "Visitar"
                     }, {
                         "type": "postback",
                         "title": "Postback",
                         "payload": "Payload for first element in a generic bubble",
                     }],
                 },{
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "title": "Atractivo 2",
+                    "subtitle": "Laguna Quilotoa",
+                    "image_url": "http://www.turismo.gob.ec/wp-content/uploads/2014/02/Quilotoa.png",
                     "buttons": [{
                         "type": "postback",
-                        "title": "Postback",
+                        "title": "Visitar",
                         "payload": "Payload for second element in a generic bubble",
                     }],
                 }]
